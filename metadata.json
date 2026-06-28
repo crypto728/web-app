@@ -1,0 +1,6 @@
+{
+  "name": "Remr.ai",
+  "description": "Task and Habit Tracker with Voice Assistant",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

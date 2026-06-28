@@ -1,0 +1,64 @@
+{
+  "schema": {
+    "users": {
+      "path": "users/{userId}",
+      "fields": {
+        "email": "string",
+        "displayName": "string",
+        "photoURL": "string",
+        "createdAt": "timestamp"
+      }
+    },
+    "tasks": {
+      "path": "users/{userId}/tasks/{taskId}",
+      "fields": {
+        "title": "string",
+        "description": "string",
+        "priority": "string",
+        "status": "string",
+        "deadline": "timestamp",
+        "context": "string",
+        "createdAt": "timestamp",
+        "updatedAt": "timestamp"
+      }
+    },
+    "goals": {
+      "path": "users/{userId}/goals/{goalId}",
+      "fields": {
+        "title": "string",
+        "description": "string",
+        "targetDate": "timestamp",
+        "status": "string",
+        "progress": "number",
+        "type": "string",
+        "createdAt": "timestamp"
+      }
+    },
+    "recommendations": {
+      "path": "users/{userId}/recommendations/{recId}",
+      "fields": {
+        "content": "string",
+        "type": "string",
+        "createdAt": "timestamp"
+      }
+    }
+  },
+  "rules": {
+    "users": {
+      "read": "request.auth != null && request.auth.uid == userId",
+      "write": "request.auth != null && request.auth.uid == userId"
+    },
+    "tasks": {
+      "read": "request.auth != null && request.auth.uid == userId",
+      "write": "request.auth != null && request.auth.uid == userId"
+    },
+    "goals": {
+      "read": "request.auth != null && request.auth.uid == userId",
+      "write": "request.auth != null && request.auth.uid == userId"
+    },
+    "recommendations": {
+      "read": "request.auth != null && request.auth.uid == userId",
+      "write": "request.auth != null && request.auth.uid == userId"
+    }
+  }
+}
